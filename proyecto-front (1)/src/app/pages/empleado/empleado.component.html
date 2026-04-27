@@ -1,0 +1,50 @@
+<p>empleado works!</p>
+
+<!--<ul>
+    <li *ngFor="let e of empleado">{{e.codigoEmple}} - {{e.nombreEmple}}</li>
+</ul>
+
+<ul>
+    @for(e of empleado; track $index){
+        <li>{{e.codigoEmple}} - {{e.nombreEmple}}</li>
+    }
+</ul>-->
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="codigoEmple">
+    <th mat-header-cell *matHeaderCellDef> Código </th>
+    <td mat-cell *matCellDef="let element"> {{element.codigoEmple}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nombreEmple">
+    <th mat-header-cell *matHeaderCellDef> Nombre Empleado </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombreEmple}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="fechaDeIngreso">
+    <th mat-header-cell *matHeaderCellDef> Fecha de Ingreso </th>
+    <td mat-cell *matCellDef="let element"> {{element.fechaDeIngreso}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="salarioEmple">
+    <th mat-header-cell *matHeaderCellDef> Salario </th>
+    <td mat-cell *matCellDef="let element"> {{element.salarioEmple}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="nombreArea">
+    <th mat-header-cell *matHeaderCellDef> Área </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombreArea}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
